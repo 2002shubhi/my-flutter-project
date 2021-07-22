@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 class ResultScreen extends StatelessWidget {
   final model;
 
+
+
+
   ResultScreen({this.model});
 
   @override
@@ -27,6 +30,10 @@ class ResultScreen extends StatelessWidget {
       SizedBox(
     height: 25,
     ),
+
+
+
+
       Text("Your total score is ${model.r.round()}", style: TextStyle(color: Colors.red[700], fontSize: 34, fontWeight: FontWeight.w700),),
       SizedBox(
         height: 25,

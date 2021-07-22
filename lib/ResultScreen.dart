@@ -9,6 +9,7 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.teal[700],title:Text("Survey App")),
         body: SingleChildScrollView(
         child: Container(
         width: double.infinity,
@@ -16,12 +17,23 @@ class ResultScreen extends StatelessWidget {
     child: Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
-    SizedBox(
-    height: 8,
-    ),
-    Text("${model.comments}", style: TextStyle(color: model.c, fontSize: 18, fontWeight: FontWeight.w500),),
+      SizedBox(
+        height: 8,
+      ),
+      CircleAvatar(
+          radius:100,
+          backgroundImage: NetworkImage(model.a) ),
 
-    SizedBox(height: 16,),
+      SizedBox(
+    height: 25,
+    ),
+      Text("Your total score is ${model.r.round()}", style: TextStyle(color: Colors.red[700], fontSize: 34, fontWeight: FontWeight.w700),),
+      SizedBox(
+        height: 25,
+      ),
+    Text("${model.comments}", style: TextStyle(color: model.c, fontSize: 18, fontWeight: FontWeight.w900),),
+
+    SizedBox(height: 75,),
     Container(
     child: FlatButton.icon(
     onPressed: (){
